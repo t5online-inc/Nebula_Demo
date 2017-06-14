@@ -1,0 +1,26 @@
+{
+  "name": "ScreenShotModule",
+  "version": "1.0.0",
+  "license": {
+    "type": "t5online"
+  },
+  "homepage": "https://github.com/t5online-inc/ScreenShotModule",
+  "authors": {
+    "t5online": "yslee@t5online.com"
+  },
+  "summary": "ScreenShotModule(Nebula)",
+  "source": {
+    "git": "https://github.com/t5online-inc/ScreenShotModule.git"
+  },
+  "source_files": "ios/ScreenShotModule/Shared/**/*.{h,m}",
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

@@ -1,0 +1,1 @@
+../../../DeviceInfoModule/ios/DeviceInfoModule/Shared/Plugin/DeviceInfoPlugin.h

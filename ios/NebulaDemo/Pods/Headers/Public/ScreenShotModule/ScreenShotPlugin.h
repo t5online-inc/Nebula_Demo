@@ -1,0 +1,1 @@
+../../../ScreenShotModule/ios/ScreenShotModule/Shared/Plugin/ScreenShotPlugin.h

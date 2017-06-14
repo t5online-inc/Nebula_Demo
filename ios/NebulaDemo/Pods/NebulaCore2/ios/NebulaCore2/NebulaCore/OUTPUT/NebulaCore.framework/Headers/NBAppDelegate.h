@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NBAppDelegate : UIResponder <UIApplicationDelegate>
+@protocol NebulaDelegate <NSObject>
+- (void)registerServices;
+- (void)loadPlugins;
+@end
+
+@interface NBAppDelegate : UIResponder <UIApplicationDelegate, NebulaDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
 @end
+

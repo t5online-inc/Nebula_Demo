@@ -11,18 +11,11 @@
 #import "NBPlugin.h"
 #import "NBBridgeContainer.h"
 
-#define PLUGIN_GROUP_PREFERENCE     @"preference"
-#define PLUGIN_GROUP_DEVICEINFO     @"deviceinfo"
-#define PLUGIN_GROUP_SCREENSHOT     @"screenshot"
-#define PLUGIN_GROUP_FILESYSTEM     @"filesystem"
-#define PLUGIN_GROUP_NATIVEEVENT    @"nativeevent"
-#define PLUGIN_GROUP_GEOLOCATION    @"geolocation"
-#define PLUGIN_GROUP_STATUSBAR      @"statusbar"
-
+#define SERVICE_KEY_PLUGIN  @"pluginService"
 
 @interface NBPluginService : NSObject
 
-- (void)addPlugin:(NSObject*)plugin actionGroup:(NSString*)group;
+- (void)addPlugin:(NBPlugin*)plugin actionGroup:(NSString*)group;
 - (void)addPluginClass:(NSString*)pluginClass actionGroup:(NSString*)group;
 - (void)proceedJsRequest:(NBBridgeContainer*)bridgeContainer;
 

@@ -351,6 +351,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/NebulaCore2/ios/NebulaCore2/NebulaCore/OUTPUT\"",
@@ -361,6 +362,7 @@
 					"\"${PODS_ROOT}/Headers/Public/NebulaCore2\"",
 				);
 				INFOPLIST_FILE = NebulaDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.t5online.NebulaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -373,6 +375,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_ROOT}/NebulaCore2/ios/NebulaCore2/NebulaCore/OUTPUT\"",
@@ -383,6 +386,7 @@
 					"\"${PODS_ROOT}/Headers/Public/NebulaCore2\"",
 				);
 				INFOPLIST_FILE = NebulaDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.t5online.NebulaDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

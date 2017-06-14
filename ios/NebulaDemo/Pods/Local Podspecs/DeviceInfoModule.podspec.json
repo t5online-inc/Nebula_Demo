@@ -1,0 +1,26 @@
+{
+  "name": "DeviceInfoModule",
+  "version": "1.0.0",
+  "license": {
+    "type": "t5online"
+  },
+  "homepage": "https://github.com/t5online-inc/DeviceInfoModule",
+  "authors": {
+    "t5online": "yslee@t5online.com"
+  },
+  "summary": "DeviceInfoModule(Nebula)",
+  "source": {
+    "git": "https://github.com/t5online-inc/DeviceInfoModule.git"
+  },
+  "source_files": "ios/DeviceInfoModule/Shared/**/*.{h,m}",
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

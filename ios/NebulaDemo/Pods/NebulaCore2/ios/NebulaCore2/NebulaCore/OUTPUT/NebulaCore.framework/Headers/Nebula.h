@@ -7,16 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NBPluginService.h"
-#import "NBPreferenceService.h"
-#import "NBGeolocationService.h"
-#import "NBCustomEventService.h"
 
 @interface Nebula : NSObject
 
-+ (NBPluginService*)pluginService;
-+ (NBPreferenceService*)preferenceService;
-+ (NBGeolocationService*)geoLocationService;
-+ (NBCustomEventService*)customEventService;
++ (void)registerService:(id)serviceObj forKey:(NSString*)key;
++ (id)serviceWithKey:(NSString*)key;
 
 @end

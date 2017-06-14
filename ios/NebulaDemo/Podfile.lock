@@ -1,21 +1,69 @@
 PODS:
+  - DeviceInfoModule (1.0.0)
+  - FileSystemModule (1.0.0)
+  - GeolocationModule (1.0.0)
   - NebulaCore2 (2.0.0)
+  - PreferenceModule (1.0.0)
+  - ScreenShotModule (1.0.0)
+  - StatusBarModule (1.0.0)
 
 DEPENDENCIES:
+  - DeviceInfoModule (from `https://github.com/t5online-inc/DeviceInfoModule.git`)
+  - FileSystemModule (from `https://github.com/t5online-inc/FileSystemModule.git`)
+  - GeolocationModule (from `https://github.com/t5online-inc/GeolocationModule.git`)
   - NebulaCore2 (from `https://www.t5online.com:8002/t5-frameworks/nebula.git`)
+  - PreferenceModule (from `https://github.com/t5online-inc/PreferenceModule.git`)
+  - ScreenShotModule (from `https://github.com/t5online-inc/ScreenShotModule.git`)
+  - StatusBarModule (from `https://github.com/t5online-inc/StatusBarModule.git`)
 
 EXTERNAL SOURCES:
+  DeviceInfoModule:
+    :git: https://github.com/t5online-inc/DeviceInfoModule.git
+  FileSystemModule:
+    :git: https://github.com/t5online-inc/FileSystemModule.git
+  GeolocationModule:
+    :git: https://github.com/t5online-inc/GeolocationModule.git
   NebulaCore2:
     :git: https://www.t5online.com:8002/t5-frameworks/nebula.git
+  PreferenceModule:
+    :git: https://github.com/t5online-inc/PreferenceModule.git
+  ScreenShotModule:
+    :git: https://github.com/t5online-inc/ScreenShotModule.git
+  StatusBarModule:
+    :git: https://github.com/t5online-inc/StatusBarModule.git
 
 CHECKOUT OPTIONS:
+  DeviceInfoModule:
+    :commit: 0fd3f4ba0c470455785211244615cbe8f01ab9d9
+    :git: https://github.com/t5online-inc/DeviceInfoModule.git
+  FileSystemModule:
+    :commit: 140bd6da53ed3a60034ae2186571854cdbaf3294
+    :git: https://github.com/t5online-inc/FileSystemModule.git
+  GeolocationModule:
+    :commit: 1b30fcb12f216b27a79b43f058d81ece2c6387ff
+    :git: https://github.com/t5online-inc/GeolocationModule.git
   NebulaCore2:
-    :commit: 3949aa39cf54e944f926ffe6ca81a16a181dd15d
+    :commit: b4d98ae376ef11b2936184d9e2ef34743a5372c0
     :git: https://www.t5online.com:8002/t5-frameworks/nebula.git
+  PreferenceModule:
+    :commit: 490954337d755999b517118e35dee5eb5a652ad5
+    :git: https://github.com/t5online-inc/PreferenceModule.git
+  ScreenShotModule:
+    :commit: 0250a55a41fe2409f2eb3e5913b9089b58c7e7af
+    :git: https://github.com/t5online-inc/ScreenShotModule.git
+  StatusBarModule:
+    :commit: 18965c2ae6a8e4f523b8efde9a8dcc3477476d86
+    :git: https://github.com/t5online-inc/StatusBarModule.git
 
 SPEC CHECKSUMS:
+  DeviceInfoModule: ccbb6289510e36143401d3475db3ecf416b28500
+  FileSystemModule: 7f985c632b3bb17e6527b762dafd69279b20ced4
+  GeolocationModule: 3b0ba3114c2856dbc039c75ab1657f93b6fe6d2f
   NebulaCore2: ca22129f73c7df4ae7a38341f08eac0cf95d1f2f
+  PreferenceModule: a12ef9b3a13e822f8b6bb883cae3f38a97ee7887
+  ScreenShotModule: 828baf741f8430898b898ef0fffb9a4fd617da44
+  StatusBarModule: 21afa0ee58444911e096167c1275552ae3edb7dc
 
-PODFILE CHECKSUM: 387b0845ed69588e4b4af0901afe1d99928cf3df
+PODFILE CHECKSUM: d5faf0eeeeb39e070ab212e3eef150eb3dcbdb26
 
 COCOAPODS: 1.2.1

@@ -7,6 +7,17 @@
 //
 
 #import "AppDelegate.h"
+#import <NebulaCore/Nebula.h>
+#import <NebulaCore/NBPluginService.h>
+#import <PreferenceService.h>
+#import <GeolocationService.h>
+
+#import <PreferencePlugin.h>
+#import <DeviceInfoPlugin.h>
+#import <FileSystemPlugin.h>
+#import <StatusBarPlugin.h>
+#import <ScreenShotPlugin.h>
+#import <GeolocationPlugin.h>
 
 @interface AppDelegate ()
 
@@ -16,7 +27,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [super application:application didFinishLaunchingWithOptions:launchOptions];
     return YES;
 }
 
@@ -52,19 +63,23 @@
 - (void)registerServices
 {
     [super registerServices];
-    [Nebula registerService:[NBPluginService new] forKey:SERVICE_KEY_PREFERENCE];
+    
+    [Nebula registerService:[PreferenceService new] forKey:SERVICE_KEY_PREFERENCE];
+    [Nebula registerService:[GeolocationService new] forKey:SERVICE_KEY_GEOLOCATION];
+    
 }
 
 - (void)loadPlugins
 {
+    [super loadPlugins];
+    
     NBPluginService* pluginService = [Nebula serviceWithKey:SERVICE_KEY_PLUGIN];
-    [pluginService addPluginClass:@"NBPreferencePlugin" actionGroup:PLUGIN_GROUP_PREFERENCE];
-    [pluginService addPluginClass:@"NBDeviceInfoPlugin" actionGroup:PLUGIN_GROUP_DEVICEINFO];
-    [pluginService addPluginClass:@"NBFileSystemPlugin" actionGroup:PLUGIN_GROUP_FILESYSTEM];
-    [pluginService addPluginClass:@"NBNativeEventPlugin" actionGroup:PLUGIN_GROUP_NATIVEEVENT];
-    [pluginService addPluginClass:@"NBScreenShotPlugin" actionGroup:PLUGIN_GROUP_SCREENSHOT];
-    [pluginService addPluginClass:@"NBGeolocationPlugin" actionGroup:PLUGIN_GROUP_GEOLOCATION];
-    [pluginService addPluginClass:@"NBStatusBarPlugin" actionGroup:PLUGIN_GROUP_STATUSBAR];
+    [pluginService addPluginClass:@"PreferencePlugin" actionGroup:PLUGIN_GROUP_PREFERENCE];
+    [pluginService addPluginClass:@"DeviceInfoPlugin" actionGroup:PLUGIN_GROUP_DEVICEINFO];
+    [pluginService addPluginClass:@"FileSystemPlugin" actionGroup:PLUGIN_GROUP_FILESYSTEM];
+    [pluginService addPluginClass:@"ScreenShotPlugin" actionGroup:PLUGIN_GROUP_SCREENSHOT];
+    [pluginService addPluginClass:@"GeolocationPlugin" actionGroup:PLUGIN_GROUP_GEOLOCATION];
+    [pluginService addPluginClass:@"StatusBarPlugin" actionGroup:PLUGIN_GROUP_STATUSBAR];
 }
 
 @end

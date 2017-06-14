@@ -10,4 +10,12 @@ target 'NebulaDemo' do
   # NebulaCore
   pod 'NebulaCore2', :git => 'https://www.t5online.com:8002/t5-frameworks/nebula.git'
 
+  # Nebula Modules
+  pod 'PreferenceModule', :git => 'https://github.com/t5online-inc/PreferenceModule.git'
+  pod 'DeviceInfoModule', :git => 'https://github.com/t5online-inc/DeviceInfoModule.git'
+  pod 'ScreenShotModule', :git => 'https://github.com/t5online-inc/ScreenShotModule.git'
+  pod 'StatusBarModule', :git => 'https://github.com/t5online-inc/StatusBarModule.git'
+  pod 'FileSystemModule', :git => 'https://github.com/t5online-inc/FileSystemModule.git'
+  pod 'GeolocationModule', :git => 'https://github.com/t5online-inc/GeolocationModule.git'
+
 end
