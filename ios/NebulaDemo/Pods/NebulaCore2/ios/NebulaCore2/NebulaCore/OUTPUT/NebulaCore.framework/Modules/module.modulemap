@@ -1,0 +1,6 @@
+framework module NebulaCore {
+  umbrella header "NebulaCore.h"
+
+  export *
+  module * { export * }
+}

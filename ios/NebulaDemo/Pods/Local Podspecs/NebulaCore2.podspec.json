@@ -1,0 +1,30 @@
+{
+  "name": "NebulaCore2",
+  "version": "2.0.0",
+  "license": {
+    "type": "t5online"
+  },
+  "homepage": "https://www.t5online.com:8002/t5-frameworks/nebula",
+  "authors": {
+    "t5online": "yslee@t5online.com"
+  },
+  "summary": "Nebula Framwork",
+  "source": {
+    "git": "https://www.t5online.com:8002/t5-frameworks/nebula.git"
+  },
+  "source_files": "",
+  "ios": {
+    "public_header_files": "ios/NebulaCore2/NebulaCore/OUTPUT/NebulaCore.framework/Headers/*.h",
+    "vendored_frameworks": "ios/NebulaCore2/NebulaCore/OUTPUT/NebulaCore.framework"
+  },
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}
