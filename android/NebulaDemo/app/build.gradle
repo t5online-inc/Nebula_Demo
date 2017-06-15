@@ -1,0 +1,59 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.t5online.nebulademo"
+        minSdkVersion 19
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    testCompile 'junit:junit:4.12'
+
+    // @@@ >>>>> Import Nebula Core
+    compile 'com.t5online:nebulacore2:2.0.5-SNAPSHOT@aar'
+    // @@@ <<<<<
+}
+
+// @@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Import Nebula Modules
+ext.modules = [
+        // @@@ Add Here Modules
+        'PreferenceModule':'https://github.com/t5online-inc/PreferenceModule/blob/master/android/PreferenceModule/app/src/main/java/shared.zip?raw=true',
+        'DeviceInfoModule':'https://github.com/t5online-inc/DeviceInfoModule/blob/master/android/DeviceInfoModule/app/src/main/java/shared.zip?raw=true',
+];
+
+task importModules << {
+    for (m in modules) {
+        def zipFile = new File(buildDir, m.key)
+        download {
+            src m.value
+            dest zipFile
+        }
+        copy {
+            from zipTree(zipFile)
+            into new File(projectDir, '/src/main/java')
+        }
+        delete zipFile
+    }
+}
+
+defaultTasks 'importModules'
+// @@@ <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
