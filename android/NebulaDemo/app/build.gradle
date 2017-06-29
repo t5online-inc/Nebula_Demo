@@ -29,7 +29,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     // @@@ >>>>> Import Nebula Core
-    compile 'com.t5online:nebulacore2:2.0.5-SNAPSHOT@aar'
+    compile 'com.t5online:nebulacore2:2.0.11-SNAPSHOT@aar'
     // @@@ <<<<<
 }
 
@@ -38,6 +38,10 @@ ext.modules = [
         // @@@ Add Here Modules
         'PreferenceModule':'https://github.com/t5online-inc/PreferenceModule/blob/master/android/PreferenceModule/app/src/main/java/shared.zip?raw=true',
         'DeviceInfoModule':'https://github.com/t5online-inc/DeviceInfoModule/blob/master/android/DeviceInfoModule/app/src/main/java/shared.zip?raw=true',
+        'GeolocationModule':'https://github.com/t5online-inc/GeolocationModule/blob/master/android/GeolocationModule/app/src/main/java/shared.zip?raw=true',
+        'ScreenShotModule':'https://github.com/t5online-inc/ScreenShotModule/blob/master/android/ScreenShotModule/app/src/main/java/shared.zip?raw=true',
+        'FileSystemModule':'https://github.com/t5online-inc/FileSystemModule/blob/master/android/FileSystemModule/app/src/main/java/shared.zip?raw=true',
+        'StatusBarModule':'https://github.com/t5online-inc/StatusBarModule/blob/master/android/StatusBarModule/app/src/main/java/shared.zip?raw=true',
 ];
 
 task importModules << {

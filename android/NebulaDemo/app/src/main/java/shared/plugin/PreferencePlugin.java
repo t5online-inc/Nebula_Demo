@@ -17,13 +17,14 @@ public class PreferencePlugin extends Plugin {
     public static final String PLUGIN_GROUP_PREFERENCE = "preference";
 
     public void get(String key, String defaultValue) {
-        String ret = "";
+        String value = "";
         try {
             PreferenceService preferenceService = (PreferenceService) Nebula.getService(PreferenceService.SERVICE_KEY_PREFERENCE);
-            ret = preferenceService.getPreference(key, defaultValue);
-            JSONObject object1 = new JSONObject();
-            object1.put("value", ret);
-            resolve(object1);
+            value = preferenceService.getPreference(key, defaultValue);
+            JSONObject ret = new JSONObject();
+            ret.put("code", STATUS_CODE_SUCCESS);
+            ret.put("message", value);
+            resolve(ret);
         } catch (JSONException e) {
             e.printStackTrace();
             reject();
@@ -33,18 +34,42 @@ public class PreferencePlugin extends Plugin {
     public void set(String key, String value) {
         PreferenceService preferenceService = (PreferenceService) Nebula.getService(PreferenceService.SERVICE_KEY_PREFERENCE);
         preferenceService.setPreference(key, value);
-        resolve();
+        try {
+            JSONObject ret = new JSONObject();
+            ret.put("code", STATUS_CODE_SUCCESS);
+            ret.put("message", "");
+            resolve(ret);
+        }catch (Exception e){
+            e.printStackTrace();
+            reject();
+        }
     }
 
     public void remove(String key) {
         PreferenceService preferenceService = (PreferenceService) Nebula.getService(PreferenceService.SERVICE_KEY_PREFERENCE);
         preferenceService.removePreference(key);
-        resolve();
+        try {
+            JSONObject ret = new JSONObject();
+            ret.put("code", STATUS_CODE_SUCCESS);
+            ret.put("message", "");
+            resolve(ret);
+        }catch (Exception e){
+            e.printStackTrace();
+            reject();
+        }
     }
 
     public void removeAll() {
         PreferenceService preferenceService = (PreferenceService) Nebula.getService(PreferenceService.SERVICE_KEY_PREFERENCE);
         preferenceService.removeAllPreference();
-        resolve();
+        try {
+            JSONObject ret = new JSONObject();
+            ret.put("code", STATUS_CODE_SUCCESS);
+            ret.put("message", "");
+            resolve(ret);
+        }catch (Exception e){
+            e.printStackTrace();
+            reject();
+        }
     }
 }

@@ -20,16 +20,20 @@ public class DeviceInfoPlugin extends Plugin {
     public static final String PLUGIN_GROUP_DEVICEINFO = "deviceinfo";
 
     public void getDeviceInfo() {
-        JSONObject ret = new JSONObject();
+        JSONObject deviceInfo = new JSONObject();
         try {
-            ret.put("phoneName", Build.MODEL);
-            ret.put("platform", "Android");
-            ret.put("platformVersion", Build.VERSION.RELEASE);
-            ret.put("appName", getAppName());
-            ret.put("modelName", Build.MODEL);
-            ret.put("appVersion", getAppVersion());
-            ret.put("appBuildNo", getBuildNo());
-            ret.put("deviceId", getDeviceId());
+            deviceInfo.put("phoneName", Build.MODEL);
+            deviceInfo.put("platform", "Android");
+            deviceInfo.put("platformVersion", Build.VERSION.RELEASE);
+            deviceInfo.put("appName", getAppName());
+            deviceInfo.put("modelName", Build.MODEL);
+            deviceInfo.put("appVersion", getAppVersion());
+            deviceInfo.put("appBuildNo", getBuildNo());
+            deviceInfo.put("deviceId", getDeviceId());
+
+            JSONObject ret = new JSONObject();
+            ret.put("code", STATUS_CODE_SUCCESS);
+            ret.put("message", deviceInfo);
             resolve(ret);
         }catch (Exception e){
             reject();

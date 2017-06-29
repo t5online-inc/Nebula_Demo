@@ -6,11 +6,11 @@ import android.os.Bundle;
 import com.t5online.nebulacore.Nebula;
 import com.t5online.nebulacore.bridge.NebulaActivity;
 import com.t5online.nebulacore.bridge.NebulaWebView;
+import com.t5online.nebulacore.service.GeolocationService;
 import com.t5online.nebulacore.service.PluginService;
 
-import shared.plugin.DeviceInfoPlugin;
-import shared.plugin.PreferencePlugin;
-import shared.service.PreferenceService;
+import shared.plugin.*;
+import shared.service.*;
 
 public class MainActivity extends NebulaActivity {
 
@@ -34,6 +34,8 @@ public class MainActivity extends NebulaActivity {
     public void registerServices() {
         super.registerServices();
         Nebula.registerService(new PreferenceService(this), PreferenceService.SERVICE_KEY_PREFERENCE);
+        Nebula.registerService(new GeolocationService(this), GeolocationService.SERVICE_KEY_GEOLOCATION);
+        Nebula.registerService(new StatusBarService(this), StatusBarService.SERVICE_KEY_STATUSBAR);
     }
 
     @Override
@@ -42,5 +44,9 @@ public class MainActivity extends NebulaActivity {
         PluginService pluginService = (PluginService) Nebula.getService(PluginService.SERVICE_KEY_PLUGIN);
         pluginService.addPlugin("shared.plugin.DeviceInfoPlugin", DeviceInfoPlugin.PLUGIN_GROUP_DEVICEINFO);
         pluginService.addPlugin("shared.plugin.PreferencePlugin", PreferencePlugin.PLUGIN_GROUP_PREFERENCE);
+        pluginService.addPlugin("shared.plugin.GeolacationPlugin", GeolacationPlugin.PLUGIN_GROUP_GEOLOACTION);
+        pluginService.addPlugin("shared.plugin.ScreenShotPlugin", ScreenShotPlugin.PLUGIN_GROUP_SCREENSHOT);
+        pluginService.addPlugin("shared.plugin.FileSystemPlugin", FileSystemPlugin.PLUGIN_GROUP_FILESYSTEM);
+        pluginService.addPlugin("shared.plugin.StatusbarPlugin", StatusbarPlugin.PLUGIN_GROUP_STATUSBAR);
     }
 }
