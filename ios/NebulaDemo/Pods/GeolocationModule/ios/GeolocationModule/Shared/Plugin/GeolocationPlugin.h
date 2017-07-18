@@ -13,6 +13,7 @@
 
 @interface GeolocationPlugin : NBPlugin
 
-- (void)get:(NSNumber*)interval;
+- (void)start:(NSNumber*)interval;
+- (void)stop;
 
 @end

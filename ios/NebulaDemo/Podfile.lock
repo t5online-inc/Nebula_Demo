@@ -34,25 +34,25 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   DeviceInfoModule:
-    :commit: 0fd3f4ba0c470455785211244615cbe8f01ab9d9
+    :commit: c94296e10df3cefb9dda9fd512710bfd04ef048d
     :git: https://github.com/t5online-inc/DeviceInfoModule.git
   FileSystemModule:
-    :commit: 140bd6da53ed3a60034ae2186571854cdbaf3294
+    :commit: fde4697bb0db49627886779688eb84f30416bd96
     :git: https://github.com/t5online-inc/FileSystemModule.git
   GeolocationModule:
-    :commit: 1b30fcb12f216b27a79b43f058d81ece2c6387ff
+    :commit: 04788c5fd5643ba232c673b6c038ca17a0a49ee3
     :git: https://github.com/t5online-inc/GeolocationModule.git
   NebulaCore2:
-    :commit: b4d98ae376ef11b2936184d9e2ef34743a5372c0
+    :commit: 255e0c998c8bed8befdd54c37d36980997060c32
     :git: https://www.t5online.com:8002/t5-frameworks/nebula.git
   PreferenceModule:
-    :commit: 490954337d755999b517118e35dee5eb5a652ad5
+    :commit: 6f709d9e940a7168368ed1822c34de1e054c6351
     :git: https://github.com/t5online-inc/PreferenceModule.git
   ScreenShotModule:
-    :commit: 0250a55a41fe2409f2eb3e5913b9089b58c7e7af
+    :commit: dddd6291ed4b1235a12c88d3847b70971b644f33
     :git: https://github.com/t5online-inc/ScreenShotModule.git
   StatusBarModule:
-    :commit: 18965c2ae6a8e4f523b8efde9a8dcc3477476d86
+    :commit: ecd4f2d052c6eb2aff386165d78098ba27572148
     :git: https://github.com/t5online-inc/StatusBarModule.git
 
 SPEC CHECKSUMS:
@@ -66,4 +66,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: d5faf0eeeeb39e070ab212e3eef150eb3dcbdb26
 
-COCOAPODS: 1.2.1
+COCOAPODS: 1.3.0.beta.2

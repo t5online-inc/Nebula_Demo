@@ -778,9 +778,9 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0A572BA3B3C9B89FDAA717CB67FBCC73 /* Debug */ = {
+		0DC5856B717A419C9D4237E7CD7D8763 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A146CE0C12E1C39AF8B97551C791E4D /* FileSystemModule.xcconfig */;
+			baseConfigurationReference = DAB6B9588F291C3597942A403F9F76E1 /* ScreenShotModule.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -788,7 +788,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FileSystemModule/FileSystemModule-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/ScreenShotModule/ScreenShotModule-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -798,29 +798,7 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		12FE00F82D7DBDB7AD718AE71B51ED7E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C40E3D80BCCEAD157C1196650E6DDB66 /* GeolocationModule.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GeolocationModule/GeolocationModule-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 			};
 			name = Debug;
 		};
@@ -868,9 +846,9 @@
 			};
 			name = Release;
 		};
-		29FB92E22C1CF0EA301FF220B45881E1 /* Debug */ = {
+		26AD7905558806EBB856548C28A1C87D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75BAF7562854FF44FB7F92D95B4A48FF /* DeviceInfoModule.xcconfig */;
+			baseConfigurationReference = 26D5DCC96C71EDAA8EFCF4F8E5B4812D /* StatusBarModule.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -878,7 +856,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DeviceInfoModule/DeviceInfoModule-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/StatusBarModule/StatusBarModule-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -888,112 +866,21 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 			};
 			name = Debug;
 		};
-		4177E726B23989E7949E44B49E37EEE8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75BAF7562854FF44FB7F92D95B4A48FF /* DeviceInfoModule.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DeviceInfoModule/DeviceInfoModule-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		43A1FF0029159507D1C2263724FEAD3F /* Release */ = {
+		2C1C14C259BC2B9FD003C4FDCCF0F66E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 586BD60D166192A5DF17FBF6F9D2B9AC /* PreferenceModule.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PreferenceModule/PreferenceModule-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		6D5D661723C118B0E2B6C988E16D5EB1 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A146CE0C12E1C39AF8B97551C791E4D /* FileSystemModule.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/FileSystemModule/FileSystemModule-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		7178FD6A3E5B1988CBB1E584808B3812 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26D5DCC96C71EDAA8EFCF4F8E5B4812D /* StatusBarModule.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/StatusBarModule/StatusBarModule-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		737E0DC2C45684BAE174708C26DD4C6C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 26D5DCC96C71EDAA8EFCF4F8E5B4812D /* StatusBarModule.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/StatusBarModule/StatusBarModule-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/PreferenceModule/PreferenceModule-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -1003,8 +890,33 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 			};
 			name = Debug;
+		};
+		7C2DD6B81B7F2DD950A69C8BECB57AF7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C40E3D80BCCEAD157C1196650E6DDB66 /* GeolocationModule.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/GeolocationModule/GeolocationModule-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+			};
+			name = Release;
 		};
 		83F6BA6F5551B7F465C2AB15E9D88E9F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1029,9 +941,9 @@
 			};
 			name = Debug;
 		};
-		9B6ED43ED505CA71BCA6425C79C77A94 /* Release */ = {
+		A2E48545E4C3B2B7A735D86E0B2088B2 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C40E3D80BCCEAD157C1196650E6DDB66 /* GeolocationModule.xcconfig */;
+			baseConfigurationReference = 26D5DCC96C71EDAA8EFCF4F8E5B4812D /* StatusBarModule.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1039,7 +951,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GeolocationModule/GeolocationModule-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/StatusBarModule/StatusBarModule-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
@@ -1049,12 +961,13 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 			};
 			name = Release;
 		};
-		A9C690260395185EAC9230CB070FFD3C /* Debug */ = {
+		AE9A81A17444BC6605C777F181EF7522 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 586BD60D166192A5DF17FBF6F9D2B9AC /* PreferenceModule.xcconfig */;
+			baseConfigurationReference = C40E3D80BCCEAD157C1196650E6DDB66 /* GeolocationModule.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1062,7 +975,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/PreferenceModule/PreferenceModule-prefix.pch";
+				GCC_PREFIX_HEADER = "Target Support Files/GeolocationModule/GeolocationModule-prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
@@ -1072,8 +985,57 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 			};
 			name = Debug;
+		};
+		B1824760CF664A8C7D85D28B710B17CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75BAF7562854FF44FB7F92D95B4A48FF /* DeviceInfoModule.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DeviceInfoModule/DeviceInfoModule-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+			};
+			name = Release;
+		};
+		BE6E6EC5BA2D6242F3DD960C2238A253 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A146CE0C12E1C39AF8B97551C791E4D /* FileSystemModule.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FileSystemModule/FileSystemModule-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+			};
+			name = Release;
 		};
 		CB177E088C1BA4BAB6EA0E2342E21298 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -1098,7 +1060,55 @@
 			};
 			name = Release;
 		};
-		D7B1487F48E36BAD2CEF0AFCA4908B67 /* Debug */ = {
+		DC1EC385132FB9BEB9FF391348BD40AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A146CE0C12E1C39AF8B97551C791E4D /* FileSystemModule.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/FileSystemModule/FileSystemModule-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+			};
+			name = Debug;
+		};
+		E7AA15EE4170B54DB885BA4A1DC88CC8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75BAF7562854FF44FB7F92D95B4A48FF /* DeviceInfoModule.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DeviceInfoModule/DeviceInfoModule-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+			};
+			name = Debug;
+		};
+		EED546DBB23FC32035C9BDC4E22B30BD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -1142,34 +1152,12 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		DFC8A17B58A07EA03AD255059957E8D4 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DAB6B9588F291C3597942A403F9F76E1 /* ScreenShotModule.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ScreenShotModule/ScreenShotModule-prefix.pch";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PRIVATE_HEADERS_FOLDER_PATH = "";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = "";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-			};
-			name = Debug;
-		};
-		FB970FF6D6DCECD3455933E436BB83A8 /* Release */ = {
+		F22160934EEA63CB4B1C9D64F5AFC241 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DAB6B9588F291C3597942A403F9F76E1 /* ScreenShotModule.xcconfig */;
 			buildSettings = {
@@ -1189,6 +1177,31 @@
 				PUBLIC_HEADERS_FOLDER_PATH = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+			};
+			name = Release;
+		};
+		F99D749CA923DA001DA61CD96E5246BA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 586BD60D166192A5DF17FBF6F9D2B9AC /* PreferenceModule.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/PreferenceModule/PreferenceModule-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 			};
 			name = Release;
 		};
@@ -1198,8 +1211,8 @@
 		254B620238562B652E9BFFB9C1348F78 /* Build configuration list for PBXNativeTarget "FileSystemModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A572BA3B3C9B89FDAA717CB67FBCC73 /* Debug */,
-				6D5D661723C118B0E2B6C988E16D5EB1 /* Release */,
+				DC1EC385132FB9BEB9FF391348BD40AD /* Debug */,
+				BE6E6EC5BA2D6242F3DD960C2238A253 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1207,7 +1220,7 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D7B1487F48E36BAD2CEF0AFCA4908B67 /* Debug */,
+				EED546DBB23FC32035C9BDC4E22B30BD /* Debug */,
 				157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -1216,8 +1229,8 @@
 		74A677F5BDA24D9BB4AF9289F469F32B /* Build configuration list for PBXNativeTarget "PreferenceModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A9C690260395185EAC9230CB070FFD3C /* Debug */,
-				43A1FF0029159507D1C2263724FEAD3F /* Release */,
+				2C1C14C259BC2B9FD003C4FDCCF0F66E /* Debug */,
+				F99D749CA923DA001DA61CD96E5246BA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1225,8 +1238,8 @@
 		9709553A490CD7A850B71E894C8E439F /* Build configuration list for PBXNativeTarget "StatusBarModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				737E0DC2C45684BAE174708C26DD4C6C /* Debug */,
-				7178FD6A3E5B1988CBB1E584808B3812 /* Release */,
+				26AD7905558806EBB856548C28A1C87D /* Debug */,
+				A2E48545E4C3B2B7A735D86E0B2088B2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1234,8 +1247,8 @@
 		A3B2A8BFA32A1D0110E736288354593E /* Build configuration list for PBXNativeTarget "DeviceInfoModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				29FB92E22C1CF0EA301FF220B45881E1 /* Debug */,
-				4177E726B23989E7949E44B49E37EEE8 /* Release */,
+				E7AA15EE4170B54DB885BA4A1DC88CC8 /* Debug */,
+				B1824760CF664A8C7D85D28B710B17CB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1243,8 +1256,8 @@
 		C4343AE3EA1160F0E0622A1003D9E8EB /* Build configuration list for PBXNativeTarget "GeolocationModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				12FE00F82D7DBDB7AD718AE71B51ED7E /* Debug */,
-				9B6ED43ED505CA71BCA6425C79C77A94 /* Release */,
+				AE9A81A17444BC6605C777F181EF7522 /* Debug */,
+				7C2DD6B81B7F2DD950A69C8BECB57AF7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1252,8 +1265,8 @@
 		DCEF06AD0FBECD458EEC20E8387E0E3F /* Build configuration list for PBXNativeTarget "ScreenShotModule" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DFC8A17B58A07EA03AD255059957E8D4 /* Debug */,
-				FB970FF6D6DCECD3455933E436BB83A8 /* Release */,
+				0DC5856B717A419C9D4237E7CD7D8763 /* Debug */,
+				F22160934EEA63CB4B1C9D64F5AFC241 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

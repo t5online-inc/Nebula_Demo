@@ -15,35 +15,45 @@
 - (void)get:(NSString*)key defaultValue:(NSString*)defaultValue
 {
     NSString* ret = [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] getPreference:key defaultValue:defaultValue];
-    NSDictionary * dict = [NSDictionary dictionaryWithObject:ret forKey:@"value"];
-    [self resolve:dict];
+    
+    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
+    [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
+    [retData setObject:ret forKey:@"message"];
+    
+    [self resolve:retData];
 }
 
 - (void)set:(NSString*)key value:(NSString*)value
 {
-    if([[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] setPreference:value forKey:key]) {
-        [self resolve];
-    } else {
-        [self reject];
-    }
+    BOOL isSuccess = [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] setPreference:value forKey:key];
+    
+    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
+    [retData setObject:@(isSuccess ? STATUS_CODE_SUCCESS : STATUS_CODE_ERROR) forKey:@"code"];
+    [retData setObject:@"" forKey:@"message"];
+    
+    [self resolve:retData];
 }
 
 - (void)remove:(NSString *)key
 {
-    if([[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] removePreference:key]) {
-        [self resolve];
-    } else {
-        [self reject];
-    }
+    BOOL isSuccess = [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] removePreference:key];
+    
+    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
+    [retData setObject:@(isSuccess ? STATUS_CODE_SUCCESS : STATUS_CODE_ERROR) forKey:@"code"];
+    [retData setObject:@"" forKey:@"message"];
+    
+    [self resolve:retData];
 }
 
 - (void)removeAll
 {
-    if([[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] removeAllPreference]) {
-        [self resolve];
-    } else {
-        [self reject];
-    }
+    BOOL isSuccess = [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] removeAllPreference];
+    
+    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
+    [retData setObject:@(isSuccess ? STATUS_CODE_SUCCESS : STATUS_CODE_ERROR) forKey:@"code"];
+    [retData setObject:@"" forKey:@"message"];
+    
+    [self resolve:retData];
 }
 
 @end

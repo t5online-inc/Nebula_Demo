@@ -10,6 +10,9 @@
 #import "NBBridgeContainer.h"
 #import "NBWebViewController.h"
 
+#define STATUS_CODE_SUCCESS 200
+#define STATUS_CODE_ERROR   500
+
 @interface NBPlugin : NSObject
 
 @property (nonatomic, strong) NSString* action;

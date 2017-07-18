@@ -11,7 +11,7 @@
 #import "NBPlugin.h"
 #import "NBBridgeContainer.h"
 
-#define SERVICE_KEY_PLUGIN  @"pluginService"
+#define SERVICE_KEY_PLUGIN  @"PluginService"
 
 @interface NBPluginService : NSObject
 

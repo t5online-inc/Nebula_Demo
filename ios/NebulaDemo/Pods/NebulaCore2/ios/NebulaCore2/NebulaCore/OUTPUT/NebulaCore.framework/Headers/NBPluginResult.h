@@ -13,7 +13,8 @@
 
 #define CODE    @"code"
 #define MESSAGE @"message"
-#define DATA    @"data"
+//#define DATA    @"data"
+#define DETAIL  @"detail"
 
 @interface NBPluginResult : NSObject
 

@@ -13,6 +13,6 @@
 
 @interface ScreenShotPlugin : NBPlugin
 
--(void)takePicture;
+- (void)takePicture;
 
 @end

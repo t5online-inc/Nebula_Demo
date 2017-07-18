@@ -10,19 +10,23 @@
 		</data>
 		<key>Headers/NBBridgeContainer.h</key>
 		<data>
-		gcAnI5RBy0uRydfeyRYGm8kOyuQ=
+		hd2S3UUIG9WMdYmXvRwcu49azAw=
+		</data>
+		<key>Headers/NBNativeEventService.h</key>
+		<data>
+		u3raaElSDNy7Hf/desLQ2a/W38w=
 		</data>
 		<key>Headers/NBPlugin.h</key>
 		<data>
-		K1Ir2xKXN4B8qhyhh4PJIBh2w+0=
+		PONfz1teMurImZ/hJ1vIeY7Vvug=
 		</data>
 		<key>Headers/NBPluginResult.h</key>
 		<data>
-		MSt5OtsiKEGrBp4jgVoSk0PUiOk=
+		MR15aYtZ7nWv0pfwV5bu6hygHq0=
 		</data>
 		<key>Headers/NBPluginService.h</key>
 		<data>
-		livYJejA/2Ipfhidmuf7lyBZnBA=
+		zgv/m3Iie7Ny+DTBJPWAsa1AwpM=
 		</data>
 		<key>Headers/NBWebViewController.h</key>
 		<data>
@@ -74,44 +78,55 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			gcAnI5RBy0uRydfeyRYGm8kOyuQ=
+			hd2S3UUIG9WMdYmXvRwcu49azAw=
 			</data>
 			<key>hash2</key>
 			<data>
-			sLAhShYtlbXzWu/cbAoqVROzhqSOCD81fG3fyBPOGvQ=
+			Y3wzAE+ySUTRSiHMAtc8XSDoWklk81n9uQlJtls4fjU=
+			</data>
+		</dict>
+		<key>Headers/NBNativeEventService.h</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			u3raaElSDNy7Hf/desLQ2a/W38w=
+			</data>
+			<key>hash2</key>
+			<data>
+			Cok8EMeHKlmt21SXgIcjN+cyDCQa4ov+6fU9EHl9qvo=
 			</data>
 		</dict>
 		<key>Headers/NBPlugin.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			K1Ir2xKXN4B8qhyhh4PJIBh2w+0=
+			PONfz1teMurImZ/hJ1vIeY7Vvug=
 			</data>
 			<key>hash2</key>
 			<data>
-			Ywbro02Rpi5PWiEXvEVClAmB/FLUJEeAgs+gSzcCjYo=
+			uFJWG3tpmmJvKsPVU3055rMG5Pff2lX0bqqRCP//mdI=
 			</data>
 		</dict>
 		<key>Headers/NBPluginResult.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			MSt5OtsiKEGrBp4jgVoSk0PUiOk=
+			MR15aYtZ7nWv0pfwV5bu6hygHq0=
 			</data>
 			<key>hash2</key>
 			<data>
-			zwOH3lUvGBLGHgsdUfRIZL6KyFOxlsP1mrhPfloMoyY=
+			B0/uPChPcggoZfFkHtrK2gQvQaSj/UTDh3xQxEHi3es=
 			</data>
 		</dict>
 		<key>Headers/NBPluginService.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			livYJejA/2Ipfhidmuf7lyBZnBA=
+			zgv/m3Iie7Ny+DTBJPWAsa1AwpM=
 			</data>
 			<key>hash2</key>
 			<data>
-			5wvjeZHexN+jVUb1LO03jcsbjY+2TQ7mYu9iggvPHJk=
+			j5iE7t7y79+LEQ9AU/g/Po9zslat+f6rtpVN75l+x3g=
 			</data>
 		</dict>
 		<key>Headers/NBWebViewController.h</key>

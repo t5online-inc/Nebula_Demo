@@ -11,59 +11,102 @@
 
 #define PHOTO_FOLDER @"Photos"
 
-@interface FileSystemPlugin () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (nonatomic, strong) UIImagePickerController * pickerController;
+@class ImagePickerController;
+@protocol ImagePickerControllerDelegate <NSObject>
+@optional
+- (void)imagePickerController:(ImagePickerController*)picker didFinishPickingMediaWithInfo:(NSDictionary*)info;
+- (void)imagePickerControllerDidCancel:(ImagePickerController*)picker;
+@end
+
+@interface ImagePickerController : UIImagePickerController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@property (strong) id<ImagePickerControllerDelegate> aDelegate;
+@end
+
+@implementation ImagePickerController
+- (id)init {
+    self = [super init];
+    
+    if (self) {
+        [super setSourceType:UIImagePickerControllerSourceTypeCamera];
+        [super setDelegate:self];
+    }
+    
+    return self;
+}
+
+#pragma mark - UIImagePickerControllerDelegate Methods
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    if (_aDelegate && [_aDelegate respondsToSelector:@selector(imagePickerController:didFinishPickingMediaWithInfo:)]) {
+        [_aDelegate imagePickerController:self didFinishPickingMediaWithInfo:info];
+    }
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    if (_aDelegate && [_aDelegate respondsToSelector:@selector(imagePickerControllerDidCancel:)]) {
+        [_aDelegate imagePickerControllerDidCancel:self];
+    }
+}
+@end
+
+@class ImagePickerController;
+@interface FileSystemPlugin () <ImagePickerControllerDelegate>
+
 @property (nonatomic, assign) float iQuality;
 @property (nonatomic, assign) float iWidth;
 @property (nonatomic, assign) float iHeight;
+
+@property (nonatomic, strong) ImagePickerController* imagePickerController;
 @end
 
 @implementation FileSystemPlugin
 
-- (void)selectFile:(float)quality width:(float)Width height:(float)height
+- (void)selectFile:(NSNumber*)quality width:(NSNumber*)Width height:(NSNumber*)height
 {
-    if ( _pickerController == nil){
-        _pickerController = [UIImagePickerController new];
-        _pickerController.delegate = self;
-    }
+    BOOL isSync = [self.bridgeContainer isSync];
     
-    _iQuality = quality;
-    _iWidth = Width;
-    _iHeight = height;
-    
-    UIAlertController * alertViewController = [UIAlertController alertControllerWithTitle:@"알림" message:@"선택해주세요!" preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    [alertViewController addAction:[UIAlertAction actionWithTitle:@"카메라" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        _pickerController.sourceType = UIImagePickerControllerSourceTypeCamera;
-        [[[[UIApplication sharedApplication] delegate] window].rootViewController presentViewController:_pickerController animated:YES completion:NULL];
-    }]];
-    [alertViewController addAction:[UIAlertAction actionWithTitle:@"사진첩" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        _pickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        [[[[UIApplication sharedApplication] delegate] window].rootViewController presentViewController:_pickerController animated:YES completion:NULL];
-    }]];
-    [alertViewController addAction:[UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    if (isSync) {
+        NSMutableDictionary* retData = [NSMutableDictionary dictionary];
+        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+        [retData setObject:@"unsupported synchronous" forKey:@"message"];
         
-    }]];
-    
-    [[[[UIApplication sharedApplication] delegate] window].rootViewController presentViewController:alertViewController animated:YES completion:nil];
+        [self resolve:retData];
+    } else {
+        _iQuality = [quality floatValue];
+        _iWidth = [Width floatValue];
+        _iHeight = [height floatValue];
+        
+        _imagePickerController = [[ImagePickerController alloc] init];
+        [_imagePickerController setADelegate:self];
+        [_imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+        
+        dispatch_async(dispatch_get_main_queue(),^{
+            [self.bridgeContainer.viewController presentViewController:_imagePickerController animated:YES completion:nil];
+        });
+    }
 }
 
-#pragma mark UIImagePickerControllerDelegate
+#pragma mark - ImagePickerControllerDelegate Methods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
+    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
     NSString *filePath = [self saveToLocalSendbox:picker withInfo:info];
+    
     if(filePath !=nil && filePath.length > 0){
-        NSString* result = [NSString stringWithFormat:@"{\"filePath\":\"%@\"}", filePath];
-        [self resolve:result];
+        [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
+        [retData setObject:filePath forKey:@"message"];
     }else{
-        [self reject];
+        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+        [retData setObject:@"not found file path" forKey:@"message"];
     }
-    [self.pickerController dismissViewControllerAnimated:YES completion:NULL];
+    
+    [self resolve:retData];
+    
+    [_imagePickerController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
-    [self.pickerController dismissViewControllerAnimated:YES completion:NULL];
+    [_imagePickerController dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma file

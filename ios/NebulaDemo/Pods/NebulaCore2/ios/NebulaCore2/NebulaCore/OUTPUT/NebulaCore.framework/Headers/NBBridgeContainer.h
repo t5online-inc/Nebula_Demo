@@ -13,4 +13,5 @@
 @property (nonatomic, weak) NSURLRequest* request;
 @property (nonatomic, weak) NSURLProtocol* urlProtocol;
 @property (nonatomic, weak) UIViewController* viewController;
+@property (nonatomic, assign) BOOL isSync;
 @end
