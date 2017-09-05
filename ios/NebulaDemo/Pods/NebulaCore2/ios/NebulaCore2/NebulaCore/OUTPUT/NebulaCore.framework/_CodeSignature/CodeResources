@@ -20,13 +20,9 @@
 		<data>
 		PONfz1teMurImZ/hJ1vIeY7Vvug=
 		</data>
-		<key>Headers/NBPluginResult.h</key>
-		<data>
-		MR15aYtZ7nWv0pfwV5bu6hygHq0=
-		</data>
 		<key>Headers/NBPluginService.h</key>
 		<data>
-		zgv/m3Iie7Ny+DTBJPWAsa1AwpM=
+		Q+v9/pmRbo414MMg3+KzbhNkqWA=
 		</data>
 		<key>Headers/NBWebViewController.h</key>
 		<data>
@@ -54,7 +50,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		A9394/laUFaS+qL6401+ER+SvJU=
+		c5qnpzl/KGuSSOOGnWQX3EiNO38=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -107,26 +103,15 @@
 			uFJWG3tpmmJvKsPVU3055rMG5Pff2lX0bqqRCP//mdI=
 			</data>
 		</dict>
-		<key>Headers/NBPluginResult.h</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			MR15aYtZ7nWv0pfwV5bu6hygHq0=
-			</data>
-			<key>hash2</key>
-			<data>
-			B0/uPChPcggoZfFkHtrK2gQvQaSj/UTDh3xQxEHi3es=
-			</data>
-		</dict>
 		<key>Headers/NBPluginService.h</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			zgv/m3Iie7Ny+DTBJPWAsa1AwpM=
+			Q+v9/pmRbo414MMg3+KzbhNkqWA=
 			</data>
 			<key>hash2</key>
 			<data>
-			j5iE7t7y79+LEQ9AU/g/Po9zslat+f6rtpVN75l+x3g=
+			zHOZ8z2x1FoqunR9XG4AjNHy1GfxatIMqFoEQ/qoSGk=
 			</data>
 		</dict>
 		<key>Headers/NBWebViewController.h</key>

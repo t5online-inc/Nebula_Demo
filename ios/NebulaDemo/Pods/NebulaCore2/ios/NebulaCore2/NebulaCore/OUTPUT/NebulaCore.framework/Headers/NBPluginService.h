@@ -15,7 +15,6 @@
 
 @interface NBPluginService : NSObject
 
-- (void)addPlugin:(NBPlugin*)plugin actionGroup:(NSString*)group;
 - (void)addPluginClass:(NSString*)pluginClass actionGroup:(NSString*)group;
 - (void)proceedJsRequest:(NBBridgeContainer*)bridgeContainer;
 

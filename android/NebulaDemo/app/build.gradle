@@ -36,12 +36,13 @@ dependencies {
 // @@@ >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Import Nebula Modules
 ext.modules = [
         // @@@ Add Here Modules
-        'PreferenceModule':'https://github.com/t5online-inc/PreferenceModule/blob/master/android/PreferenceModule/app/src/main/java/shared.zip?raw=true',
-        'DeviceInfoModule':'https://github.com/t5online-inc/DeviceInfoModule/blob/master/android/DeviceInfoModule/app/src/main/java/shared.zip?raw=true',
-        'GeolocationModule':'https://github.com/t5online-inc/GeolocationModule/blob/master/android/GeolocationModule/app/src/main/java/shared.zip?raw=true',
-        'ScreenShotModule':'https://github.com/t5online-inc/ScreenShotModule/blob/master/android/ScreenShotModule/app/src/main/java/shared.zip?raw=true',
-        'FileSystemModule':'https://github.com/t5online-inc/FileSystemModule/blob/master/android/FileSystemModule/app/src/main/java/shared.zip?raw=true',
-        'StatusBarModule':'https://github.com/t5online-inc/StatusBarModule/blob/master/android/StatusBarModule/app/src/main/java/shared.zip?raw=true',
+        'PreferenceModule':'https://github.com/t5online-inc/Nebula_PreferenceModule/blob/master/android/PreferenceModule/app/src/main/java/shared.zip?raw=true',
+        'DeviceInfoModule':'https://github.com/t5online-inc/Nebula_DeviceInfoModule/blob/master/android/DeviceInfoModule/app/src/main/java/shared.zip?raw=true',
+        'GeolocationModule':'https://github.com/t5online-inc/Nebula_GeolocationModule/blob/master/android/GeolocationModule/app/src/main/java/shared.zip?raw=true',
+        'ScreenShotModule':'https://github.com/t5online-inc/Nebula_ScreenShotModule/blob/master/android/ScreenShotModule/app/src/main/java/shared.zip?raw=true',
+        'FileSystemModule':'https://github.com/t5online-inc/Nebula_FileSystemModule/blob/master/android/FileSystemModule/app/src/main/java/shared.zip?raw=true',
+        'StatusBarModule':'https://github.com/t5online-inc/Nebula_StatusBarModule/blob/master/android/StatusBarModule/app/src/main/java/shared.zip?raw=true',
+        'BioAuthenticationModule':'https://github.com/t5online-inc/Nebula_BioAuthenticationModule/blob/master/android/BioAuthenticationModule/app/src/main/java/shared.zip?raw=true'
 ];
 
 task importModules << {

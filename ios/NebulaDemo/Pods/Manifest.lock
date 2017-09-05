@@ -1,4 +1,5 @@
 PODS:
+  - BioAuthenticationModule (1.0.0)
   - DeviceInfoModule (1.0.0)
   - FileSystemModule (1.0.0)
   - GeolocationModule (1.0.0)
@@ -8,54 +9,61 @@ PODS:
   - StatusBarModule (1.0.0)
 
 DEPENDENCIES:
-  - DeviceInfoModule (from `https://github.com/t5online-inc/DeviceInfoModule.git`)
-  - FileSystemModule (from `https://github.com/t5online-inc/FileSystemModule.git`)
-  - GeolocationModule (from `https://github.com/t5online-inc/GeolocationModule.git`)
+  - BioAuthenticationModule (from `https://github.com/t5online-inc/Nebula_BioAuthenticationModule.git`)
+  - DeviceInfoModule (from `https://github.com/t5online-inc/Nebula_DeviceInfoModule.git`)
+  - FileSystemModule (from `https://github.com/t5online-inc/Nebula_FileSystemModule.git`)
+  - GeolocationModule (from `https://github.com/t5online-inc/Nebula_GeolocationModule.git`)
   - NebulaCore2 (from `https://www.t5online.com:8002/t5-frameworks/nebula.git`)
-  - PreferenceModule (from `https://github.com/t5online-inc/PreferenceModule.git`)
-  - ScreenShotModule (from `https://github.com/t5online-inc/ScreenShotModule.git`)
-  - StatusBarModule (from `https://github.com/t5online-inc/StatusBarModule.git`)
+  - PreferenceModule (from `https://github.com/t5online-inc/Nebula_PreferenceModule.git`)
+  - ScreenShotModule (from `https://github.com/t5online-inc/Nebula_ScreenShotModule.git`)
+  - StatusBarModule (from `https://github.com/t5online-inc/Nebula_StatusBarModule.git`)
 
 EXTERNAL SOURCES:
+  BioAuthenticationModule:
+    :git: https://github.com/t5online-inc/Nebula_BioAuthenticationModule.git
   DeviceInfoModule:
-    :git: https://github.com/t5online-inc/DeviceInfoModule.git
+    :git: https://github.com/t5online-inc/Nebula_DeviceInfoModule.git
   FileSystemModule:
-    :git: https://github.com/t5online-inc/FileSystemModule.git
+    :git: https://github.com/t5online-inc/Nebula_FileSystemModule.git
   GeolocationModule:
-    :git: https://github.com/t5online-inc/GeolocationModule.git
+    :git: https://github.com/t5online-inc/Nebula_GeolocationModule.git
   NebulaCore2:
     :git: https://www.t5online.com:8002/t5-frameworks/nebula.git
   PreferenceModule:
-    :git: https://github.com/t5online-inc/PreferenceModule.git
+    :git: https://github.com/t5online-inc/Nebula_PreferenceModule.git
   ScreenShotModule:
-    :git: https://github.com/t5online-inc/ScreenShotModule.git
+    :git: https://github.com/t5online-inc/Nebula_ScreenShotModule.git
   StatusBarModule:
-    :git: https://github.com/t5online-inc/StatusBarModule.git
+    :git: https://github.com/t5online-inc/Nebula_StatusBarModule.git
 
 CHECKOUT OPTIONS:
+  BioAuthenticationModule:
+    :commit: 8db039db8c151748bd831f31d7495eea49fc412f
+    :git: https://github.com/t5online-inc/Nebula_BioAuthenticationModule.git
   DeviceInfoModule:
-    :commit: c94296e10df3cefb9dda9fd512710bfd04ef048d
-    :git: https://github.com/t5online-inc/DeviceInfoModule.git
+    :commit: 6680d1806cdd69a61aacf5d68c41b967ec58aa58
+    :git: https://github.com/t5online-inc/Nebula_DeviceInfoModule.git
   FileSystemModule:
     :commit: fde4697bb0db49627886779688eb84f30416bd96
-    :git: https://github.com/t5online-inc/FileSystemModule.git
+    :git: https://github.com/t5online-inc/Nebula_FileSystemModule.git
   GeolocationModule:
     :commit: 04788c5fd5643ba232c673b6c038ca17a0a49ee3
-    :git: https://github.com/t5online-inc/GeolocationModule.git
+    :git: https://github.com/t5online-inc/Nebula_GeolocationModule.git
   NebulaCore2:
-    :commit: 255e0c998c8bed8befdd54c37d36980997060c32
+    :commit: 6d512808e217fa0d8e0ad70c9b033533523625fc
     :git: https://www.t5online.com:8002/t5-frameworks/nebula.git
   PreferenceModule:
     :commit: 6f709d9e940a7168368ed1822c34de1e054c6351
-    :git: https://github.com/t5online-inc/PreferenceModule.git
+    :git: https://github.com/t5online-inc/Nebula_PreferenceModule.git
   ScreenShotModule:
     :commit: dddd6291ed4b1235a12c88d3847b70971b644f33
-    :git: https://github.com/t5online-inc/ScreenShotModule.git
+    :git: https://github.com/t5online-inc/Nebula_ScreenShotModule.git
   StatusBarModule:
     :commit: ecd4f2d052c6eb2aff386165d78098ba27572148
-    :git: https://github.com/t5online-inc/StatusBarModule.git
+    :git: https://github.com/t5online-inc/Nebula_StatusBarModule.git
 
 SPEC CHECKSUMS:
+  BioAuthenticationModule: d17f202110fe6fc8087edce6bf5bd8ec82163734
   DeviceInfoModule: ccbb6289510e36143401d3475db3ecf416b28500
   FileSystemModule: 7f985c632b3bb17e6527b762dafd69279b20ced4
   GeolocationModule: 3b0ba3114c2856dbc039c75ab1657f93b6fe6d2f
@@ -64,6 +72,6 @@ SPEC CHECKSUMS:
   ScreenShotModule: 828baf741f8430898b898ef0fffb9a4fd617da44
   StatusBarModule: 21afa0ee58444911e096167c1275552ae3edb7dc
 
-PODFILE CHECKSUM: d5faf0eeeeb39e070ab212e3eef150eb3dcbdb26
+PODFILE CHECKSUM: 06d83add87277eecca09bc080369c07afebb658c
 
 COCOAPODS: 1.3.0.beta.2

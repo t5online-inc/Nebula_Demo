@@ -1,0 +1,26 @@
+{
+  "name": "BioAuthenticationModule",
+  "version": "1.0.0",
+  "license": {
+    "type": "t5online"
+  },
+  "homepage": "https://github.com/t5online-inc/BioAuthenticationModule",
+  "authors": {
+    "t5online": "hjkwak@t5online.com"
+  },
+  "summary": "BioAuthenticationModule(Nebula)",
+  "source": {
+    "git": "https://github.com/t5online-inc/BioAuthenticationModule.git"
+  },
+  "source_files": "ios/BioAuthenticationModule/Shared/**/*.{h,m}",
+  "frameworks": [
+    "Foundation",
+    "UIKit"
+  ],
+  "platforms": {
+    "osx": null,
+    "ios": null,
+    "tvos": null,
+    "watchos": null
+  }
+}

@@ -11,11 +11,12 @@ target 'NebulaDemo' do
   pod 'NebulaCore2', :git => 'https://www.t5online.com:8002/t5-frameworks/nebula.git'
 
   # Nebula Modules
-  pod 'PreferenceModule', :git => 'https://github.com/t5online-inc/PreferenceModule.git'
-  pod 'DeviceInfoModule', :git => 'https://github.com/t5online-inc/DeviceInfoModule.git'
-  pod 'ScreenShotModule', :git => 'https://github.com/t5online-inc/ScreenShotModule.git'
-  pod 'StatusBarModule', :git => 'https://github.com/t5online-inc/StatusBarModule.git'
-  pod 'FileSystemModule', :git => 'https://github.com/t5online-inc/FileSystemModule.git'
-  pod 'GeolocationModule', :git => 'https://github.com/t5online-inc/GeolocationModule.git'
+  pod 'PreferenceModule', :git => 'https://github.com/t5online-inc/Nebula_PreferenceModule.git'
+  pod 'DeviceInfoModule', :git => 'https://github.com/t5online-inc/Nebula_DeviceInfoModule.git'
+  pod 'ScreenShotModule', :git => 'https://github.com/t5online-inc/Nebula_ScreenShotModule.git'
+  pod 'StatusBarModule', :git => 'https://github.com/t5online-inc/Nebula_StatusBarModule.git'
+  pod 'FileSystemModule', :git => 'https://github.com/t5online-inc/Nebula_FileSystemModule.git'
+  pod 'GeolocationModule', :git => 'https://github.com/t5online-inc/Nebula_GeolocationModule.git'
+  pod 'BioAuthenticationModule', :git => 'https://github.com/t5online-inc/Nebula_BioAuthenticationModule.git'
 
 end

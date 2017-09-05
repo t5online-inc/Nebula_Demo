@@ -1,0 +1,1 @@
+../../../BioAuthenticationModule/ios/BioAuthenticationModule/Shared/Plugin/BioAuthenticationPlugin.h
