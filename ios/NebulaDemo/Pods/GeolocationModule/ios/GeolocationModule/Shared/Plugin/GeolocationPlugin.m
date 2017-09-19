@@ -14,6 +14,8 @@
 
 #define EVENT_NAME_GEO_LOCATION @"GEOLOCATION_EVENT"
 
+#define ERROR_CODE_GEO_LOCATION_NOT_AVALABLE    @"E10001"
+
 @interface GeolocationPlugin () <GeolocationServiceDelegate>
 
 @end
@@ -29,11 +31,7 @@
     NBNativeEventService* nativeService = [Nebula serviceWithKey:SERVICE_KEY_NATIVEEVENT];
     [nativeService addEventWithBridgeContainer:self.bridgeContainer forKey:SERVICE_KEY_GEOLOCATION];
     
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-    [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
-    [retData setObject:@"" forKey:@"message"];
-    
-    [self resolve:retData];
+    [self resolve];
 }
 
 - (void)stop
@@ -44,11 +42,7 @@
     NBNativeEventService* nativeService = [Nebula serviceWithKey:SERVICE_KEY_NATIVEEVENT];
     [nativeService removeEvent:SERVICE_KEY_GEOLOCATION];
     
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-    [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
-    [retData setObject:@"" forKey:@"message"];
-    
-    [self resolve:retData];
+    [self resolve];
 }
 
 #pragma mark -
@@ -66,12 +60,7 @@
 
 - (void)geolocationServiceNotAvailable:(GeolocationService *)geolocationService
 {
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-    [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-    [retData setObject:@"Location Service is Not Available" forKey:@"message"];
-    
-    [self resolve:retData];
-//    [self reject:@"E00000" message:@"Location Service is Not Available" data:nil];
+    [self reject:ERROR_CODE_GEO_LOCATION_NOT_AVALABLE message:@"Location Service is Not Available" data:nil];
 }
 
 @end

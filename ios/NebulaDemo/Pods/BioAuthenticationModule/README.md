@@ -1,1 +1,1 @@
-# LocalAuthenticationModule
+# BioAuthenticationModule

@@ -9,6 +9,8 @@
 #import "FileSystemPlugin.h"
 #import <Photos/Photos.h>
 
+#define ERROR_CODE_NOT_EXIST_FILE @"E10001"
+
 #define PHOTO_FOLDER @"Photos"
 
 @class ImagePickerController;
@@ -60,46 +62,37 @@
 
 @implementation FileSystemPlugin
 
+- (BOOL)isSupportSync
+{
+    return NO;
+}
+
 - (void)selectFile:(NSNumber*)quality width:(NSNumber*)Width height:(NSNumber*)height
 {
-    BOOL isSync = [self.bridgeContainer isSync];
+    _iQuality = [quality floatValue];
+    _iWidth = [Width floatValue];
+    _iHeight = [height floatValue];
     
-    if (isSync) {
-        NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-        [retData setObject:@"unsupported synchronous" forKey:@"message"];
-        
-        [self resolve:retData];
-    } else {
-        _iQuality = [quality floatValue];
-        _iWidth = [Width floatValue];
-        _iHeight = [height floatValue];
-        
-        _imagePickerController = [[ImagePickerController alloc] init];
-        [_imagePickerController setADelegate:self];
-        [_imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
-        
-        dispatch_async(dispatch_get_main_queue(),^{
-            [self.bridgeContainer.viewController presentViewController:_imagePickerController animated:YES completion:nil];
-        });
-    }
-}
+    _imagePickerController = [[ImagePickerController alloc] init];
+    [_imagePickerController setADelegate:self];
+    [_imagePickerController setSourceType:UIImagePickerControllerSourceTypePhotoLibrary];
+    
+    dispatch_async(dispatch_get_main_queue(),^{
+        [self.bridgeContainer.viewController presentViewController:_imagePickerController animated:YES completion:nil];
+    });}
 
 #pragma mark - ImagePickerControllerDelegate Methods
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
     NSString *filePath = [self saveToLocalSendbox:picker withInfo:info];
     
     if(filePath !=nil && filePath.length > 0){
-        [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
-        [retData setObject:filePath forKey:@"message"];
+        NSMutableDictionary* retData = [NSMutableDictionary dictionary];
+        [retData setObject:filePath forKey:@"filePath"];
+        [self resolve:retData];
     }else{
-        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-        [retData setObject:@"not found file path" forKey:@"message"];
+        [self reject:ERROR_CODE_NOT_EXIST_FILE message:@"not found file path" data:nil];
     }
-    
-    [self resolve:retData];
     
     [_imagePickerController dismissViewControllerAnimated:YES completion:NULL];
 }

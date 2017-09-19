@@ -11,7 +11,8 @@
 
 #define kLAErrorUnsupportedDevice   -99
 
-NSString* const kPluginStatusCodeFailure = @"500";
+#define ERROR_CODE_BIO_AUTH_NOT_AVAILABLE   @"E10001"
+#define ERROR_CODE_BIO_AUTH_FAIL            @"E10002"
 
 @implementation BioAuthenticationPlugin
 
@@ -19,7 +20,6 @@ NSString* const kPluginStatusCodeFailure = @"500";
  isSupported
  */
 - (void)isSupported {
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
     Class laContaxtClass = NSClassFromString(@"LAContext");
     
     if (laContaxtClass) {
@@ -28,22 +28,15 @@ NSString* const kPluginStatusCodeFailure = @"500";
         BOOL isAvailable = [laContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error];
         
         if (isAvailable) {
-            [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
-            [retData setObject:@"" forKey:@"message"];
+            [self resolve];
         } else {
             NSString* message = [self authenticationErrorMessage:[error code]];
-            
-            [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-            [retData setObject:message forKey:@"message"];
+            [self reject:ERROR_CODE_BIO_AUTH_NOT_AVAILABLE message:message data:nil];
         }
     } else {
         NSString* message = [self authenticationErrorMessage:kLAErrorUnsupportedDevice];
-        
-        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-        [retData setObject:message forKey:@"message"];
+        [self reject:ERROR_CODE_BIO_AUTH_NOT_AVAILABLE message:message data:nil];
     }
-    
-    [self resolve:retData];
 }
 
 /**
@@ -96,7 +89,6 @@ NSString* const kPluginStatusCodeFailure = @"500";
  @param fallback Localized Fallback Button Title
  */
 - (void)authenticateLaPolicy:(LAPolicy)policy withMessage:(NSString *)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback  {
-    __block NSMutableDictionary* retData = [NSMutableDictionary dictionary];
     Class laContaxtClass = NSClassFromString(@"LAContext");
     
     if (laContaxtClass) {
@@ -115,32 +107,19 @@ NSString* const kPluginStatusCodeFailure = @"500";
         if (isAvailable) {
             [laContext evaluatePolicy:policy localizedReason:message reply:^(BOOL success, NSError * _Nullable error) {
                 if (success) {
-                    [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
-                    [retData setObject:@"" forKey:@"message"];
+                    [self resolve];
                 } else {
                     NSString* message = [self authenticationErrorMessage:[error code]];
-                    
-                    [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-                    [retData setObject:message forKey:@"message"];
+                    [self reject:ERROR_CODE_BIO_AUTH_FAIL message:message data:nil];
                 }
-                
-                [self resolve:retData];
             }];
         } else {
             NSString* message = [self authenticationErrorMessage:[error code]];
-            
-            [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-            [retData setObject:message forKey:@"message"];
-            
-            [self resolve:retData];
+            [self reject:ERROR_CODE_BIO_AUTH_FAIL message:message data:nil];
         }
     } else {
         NSString* message = [self authenticationErrorMessage:kLAErrorUnsupportedDevice];
-        
-        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-        [retData setObject:message forKey:@"message"];
-        
-        [self resolve:retData];
+        [self reject:ERROR_CODE_BIO_AUTH_FAIL message:message data:nil];
     }
 }
 

@@ -10,50 +10,58 @@
 #import <NebulaCore/Nebula.h>
 #import "PreferenceService.h"
 
+#define ERROR_CODE_INVALID_KEY      @"E10001"
+#define ERROR_CODE_INVALID_VALUE    @"E10002"
+#define ERROR_CODE_INVALID_DATA     @"E10003"
+
 @implementation PreferencePlugin
 
 - (void)get:(NSString*)key defaultValue:(NSString*)defaultValue
 {
+    if (!key) {
+        [self reject:ERROR_CODE_INVALID_KEY message:@"Invalid Key" data:nil];
+        return;
+    }
+    
     NSString* ret = [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] getPreference:key defaultValue:defaultValue];
     
     NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-    [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
-    [retData setObject:ret forKey:@"message"];
-    
+    [retData setObject:ret forKey:@"value"];
     [self resolve:retData];
+    
 }
 
 - (void)set:(NSString*)key value:(NSString*)value
 {
-    BOOL isSuccess = [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] setPreference:value forKey:key];
+    if (!key) {
+        [self reject:ERROR_CODE_INVALID_KEY message:@"Invalid Key" data:nil];
+        return;
+    }
     
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-    [retData setObject:@(isSuccess ? STATUS_CODE_SUCCESS : STATUS_CODE_ERROR) forKey:@"code"];
-    [retData setObject:@"" forKey:@"message"];
+    if (!value) {
+        [self reject:ERROR_CODE_INVALID_VALUE message:@"Invalid Value" data:nil];
+        return;
+    }
     
-    [self resolve:retData];
+    [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] setPreference:value forKey:key];
+    [self resolve];
 }
 
 - (void)remove:(NSString *)key
 {
-    BOOL isSuccess = [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] removePreference:key];
+    if (!key) {
+        [self reject:ERROR_CODE_INVALID_KEY message:@"Invalid Key" data:nil];
+        return;
+    }
     
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-    [retData setObject:@(isSuccess ? STATUS_CODE_SUCCESS : STATUS_CODE_ERROR) forKey:@"code"];
-    [retData setObject:@"" forKey:@"message"];
-    
-    [self resolve:retData];
+    [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] removePreference:key];
+    [self resolve];
 }
 
 - (void)removeAll
 {
-    BOOL isSuccess = [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] removeAllPreference];
-    
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-    [retData setObject:@(isSuccess ? STATUS_CODE_SUCCESS : STATUS_CODE_ERROR) forKey:@"code"];
-    [retData setObject:@"" forKey:@"message"];
-    
-    [self resolve:retData];
+    [[Nebula serviceWithKey:SERVICE_KEY_PREFERENCE] removeAllPreference];
+    [self resolve];
 }
 
 @end

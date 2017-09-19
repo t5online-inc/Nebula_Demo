@@ -11,33 +11,25 @@
 
 @implementation StatusBarPlugin
 
+- (BOOL)isSupportSync
+{
+    return NO;
+}
+
 - (void)setStatusBar:(NSNumber*)isHidden backgroundColor:(NSString*)backgroundColor isDefault:(NSNumber*)isDefault
 {
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
-    BOOL isSync = [self.bridgeContainer isSync];
+    UIViewController* viewController = self.bridgeContainer.viewController;
     
-    if (isSync) {
-        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-        [retData setObject:@"unsupported syncronize" forKey:@"message"];
-    } else {
-        UIViewController* viewController = self.bridgeContainer.viewController;
+    if([viewController isKindOfClass:[NBWebViewController class]]){
+        UIColor* color = [UIColor colorWithHexString:backgroundColor];
         
-        if([viewController isKindOfClass:[NBWebViewController class]]){
-            UIColor* color = [UIColor colorWithHexString:backgroundColor];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [(NBWebViewController*)viewController setStatusBar:[isHidden boolValue] backgroundColor:color isDefault:[isDefault boolValue]];
-            });
-            
-            [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
-            [retData setObject:@"" forKey:@"message"];
-        } else {
-            [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-            [retData setObject:@"not found webview" forKey:@"message"];
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [(NBWebViewController*)viewController setStatusBar:[isHidden boolValue] backgroundColor:color isDefault:[isDefault boolValue]];
+            [self resolve];
+        });
+    } else {
+        [self reject];
     }
-    
-    [self resolve:retData];
 }
 
 @end

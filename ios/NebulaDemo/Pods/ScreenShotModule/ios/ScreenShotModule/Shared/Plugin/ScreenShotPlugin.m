@@ -9,6 +9,8 @@
 #import "ScreenShotPlugin.h"
 #import <QuartzCore/QuartzCore.h>
 
+#define ERROR_COE_SCREENSHOT_FAIL   @"E10001"
+
 @implementation ScreenShotPlugin
 
 - (void)takePicture
@@ -30,17 +32,12 @@
 
 #pragma mark -
 - (void)image:(UIImage*)image didFinishSavingWithError:(NSError*)error contextInfo:(void*)contextInfo {
-    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
     
     if (error) {
-        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
-        [retData setObject:error forKey:@"message"];
+        [self reject:ERROR_COE_SCREENSHOT_FAIL message:[error description] data:nil];
     } else {
-        [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
-        [retData setObject:@"" forKey:@"message"];
+        [self resolve];
     }
-    
-    [self resolve:retData];
 }
 
 @end
